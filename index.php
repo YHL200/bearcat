@@ -9,4 +9,3 @@ define('APP_PATH', './App/');
 
 include_once './Frame/Core/Frame.class.php';
 Frame::run();
-?>
