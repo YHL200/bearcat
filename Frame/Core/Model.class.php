@@ -68,7 +68,7 @@ class Model {
             exit();
         }
     }
-    //查询一行一列（可以略）
+
     //添加方法
     public function add($sql, $params=array()){
         try{

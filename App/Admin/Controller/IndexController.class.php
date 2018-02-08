@@ -7,7 +7,8 @@ class IndexController extends CommonController
     {
 
 //      echo 'hellow world';
-        $this->display('_index.html');
+        $this->display('index.html');
+
 
 
     }
