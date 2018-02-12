@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>留言页</title>
+    <link rel="stylesheet" type="text/css" href="./Public/Admin/css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="./Public/Admin/css/main.css"/>
+    <script type="text/javascript" src="./Public/Admin/js/libs/modernizr.min.js"></script>
+    <script type="text/javascript" src="../../../web/home/js/jquery1.42.min.js"></script>
+
+</head>
+<body>
+
+
+<!----头部 --->
+
+<div class="topbar-wrap white">
+    <div class="topbar-inner clearfix">
+        <div class="topbar-logo-wrap clearfix">
+
+            <ul class="navbar-list clearfix">
+                <li><a class="on" href="?m=Admin&c=User&a=index"><h3>查看自身留言页 </h3></a></li>
+                <li><a href="?m=Admin&c=Index&a=index"><h3>留言页</h3></a></li>
+                <li><a href="./"><h3>退出</h3></a></li>
+            </ul>
+
+        </div>
+
+
+
+    </div>
+</div>
+<!----头部 --->
+
+
+<div class="foot" style="width:100%;text-align:center">
+       <form action="?m=Admin&c=User&a=adddata" method="post" >
+        <div class="panel" style="background-color: rgb(245,245,245)">
+            <div class="panel-body" style="padding:30px; width: 100%">
+                <div class="form-group">
+                    <div class="field field-icon-right">
+
+                        <select name="usertoid"  style="width:200px;height:35px">
+                            <option value="0">请选择留言人</option>
+                            {foreach from=$res key=k item=v}
+                            <option value={$k}>{$v.username}</option>
+
+                            {/foreach}
+                        </select>
+
+                    </div>
+                    <br/>
+                    <div class="field field-icon-right">
+                        <input id="nickname" type="text" class="input" name="title" placeholder="留言标题（可选择）"
+                               style="width:200px;height:35px"/>
+                    </div>
+                </div>
+                <br/>
+                <div class="form-group">
+                    <div class="field field-icon-right">
+                        <input type="text" id="content" class="input" name="content" placeholder="留言内容"
+                               style="width:545px;height:80px"/>
+                    </div>
+                </div>
+                <br/>
+                <div class="form-group">
+                    <span><button >留言</button></span>&emsp;&emsp;
+                    <span><button name="restart" onclick="clearDefaultText(this)">重置</button></span>
+                </div>
+            </div>
+
+        </div>
+    </form>
+</div>
+</div>
+
+<script>
+    function clearDefaultText() {
+        var nickname = document.getElementById('nickname');
+        var content = document.getElementById('content');
+        var email = document.getElementById('email');
+        nickname.value = "";
+        content.value = "";
+        email.value = "";
+    }
+</script>
+
+
+</body>
+</html>

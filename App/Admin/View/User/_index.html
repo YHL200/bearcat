@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>查看留言页</title>
+    <link rel="stylesheet" type="text/css" href="./Public/Admin/css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="./Public/Admin/css/main.css"/>
+    <script type="text/javascript" src="./Public/Admin/js/libs/modernizr.min.js"></script>
+    <script type="text/javascript" src="../../../web/home/js/jquery1.42.min.js"></script>
+
+</head>
+<body>
+
+
+<!----头部 --->
+<!--<div class="topbar-wrap white">
+    <div class="topbar-inner clearfix">
+        <div class="topbar-logo-wrap clearfix">
+
+            <ul class="navbar-list clearfix">
+                <li><a class="on" href="?m=Admin&c=User&a=index">查看留言页</a></li>
+                <li><a href="?m=Admin&c=Index&a=index">留言页</a></li>
+                <li><a href="./">退出</a></li>
+            </ul>
+        </div>
+
+
+
+    </div>
+</div>-->
+<!----头部 --->
+
+
+<div class="foot" style="width:100%;text-align:center">
+    <form action="?m=Admin&c=User&a=adddata" method="post" >
+        <div class="panel" style="background-color: rgb(245,245,245)">
+            <div class="panel-body" style="padding:30px; width: 100%">
+                <div class="form-group">
+                       <h2> <a href="?m=Admin&c=Index&a=index">返回给他人留言页面</a></h2>
+                    <br/>
+                    <table  align="center" >
+                        <tr>
+                            <td align="center" style="width:240px; height: 21px;" valign="middle">留言人：</td>
+                            {foreach from=$resusername key=k item=v}
+                            <td>{$v}</td>
+                            {/foreach}
+                        </tr>
+                        <tr>
+
+                            <td align="center" style="width:240px; height: 21px;" valign="middle">留言标题与内容:</td>
+                            {foreach from=$rescontent  item=temp}
+                            {assign var="role" value=$temp}
+                            {foreach from=$role key=key  item=val}
+                             <td>{$role[$key]}</td>
+                            {/foreach}
+                            {/foreach}
+
+                        </tr>
+
+                    </table>
+
+
+                </div>
+                <br/><br/>
+    </form>
+</div>
+</div>
+
+
+
+
+</body>
+</html>
