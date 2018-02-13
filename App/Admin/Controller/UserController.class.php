@@ -14,8 +14,11 @@ class UserController extends Controller
 
 
 
+
         $login = Factory::M('User');
         $resusername = $login->seldata();
+
+
 
         $rescontent=$login->sel_data();
 

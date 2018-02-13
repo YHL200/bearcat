@@ -35,6 +35,8 @@ class UserModel extends Model
         $sql = "select addresserid  from  message  where recipientsid= $userid ";
          $res=$this->selectsql($sql);
 
+
+
 //        print_r($res);exit;
 
         $arr2=[];

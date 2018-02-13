@@ -43,7 +43,9 @@ class Model {
 
     public  function selectsql($sql){
 
+
         $st = $this->pdo->query($sql);
+
         return $st->fetchAll(PDO::FETCH_ASSOC);
     }
 

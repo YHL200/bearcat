@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="./Public/Admin/css/common.css"/>
     <link rel="stylesheet" type="text/css" href="./Public/Admin/css/main.css"/>
     <script type="text/javascript" src="./Public/Admin/js/libs/modernizr.min.js"></script>
-    <script type="text/javascript" src="../../../web/home/js/jquery1.42.min.js"></script>
+  
 
 </head>
 <body>
@@ -34,13 +34,13 @@
 
 
 <div class="foot" style="width:100%;text-align:center">
-       <form action="?m=Admin&c=User&a=adddata" method="post" >
+       <form action="/?m=Admin&c=User&a=adddata" method="post"  id="form">
         <div class="panel" style="background-color: rgb(245,245,245)">
             <div class="panel-body" style="padding:30px; width: 100%">
                 <div class="form-group">
                     <div class="field field-icon-right">
 
-                        <select name="usertoid"  style="width:200px;height:35px">
+                        <select name="usertoid" id="usertoid"  style="width:200px;height:35px">
                             <option value="0">请选择留言人</option>
                             {foreach from=$res key=k item=v}
                             <option value={$k}>{$v.username}</option>
@@ -50,7 +50,7 @@
 
                     </div>
                     <br/>
-                    <div class="field field-icon-right">
+                    <div class="field field-icon-right" id="field-icon-right">
                         <input id="nickname" type="text" class="input" name="title" placeholder="留言标题（可选择）"
                                style="width:200px;height:35px"/>
                     </div>
@@ -64,8 +64,8 @@
                 </div>
                 <br/>
                 <div class="form-group">
-                    <span><button >留言</button></span>&emsp;&emsp;
-                    <span><button name="restart" onclick="clearDefaultText(this)">重置</button></span>
+                    <span><input type="button" value="留言" onclick="submitfrom();"></span>&emsp;&emsp;
+
                 </div>
             </div>
 
@@ -74,7 +74,7 @@
 </div>
 </div>
 
-<script>
+<script type="text/javascript">
     function clearDefaultText() {
         var nickname = document.getElementById('nickname');
         var content = document.getElementById('content');
@@ -83,6 +83,18 @@
         content.value = "";
         email.value = "";
     }
+
+    function  submitfrom() {
+        var fromid = document.getElementById('form');
+        fromid.submit();
+
+    }
+
+
+
+
+
+
 </script>
 
 

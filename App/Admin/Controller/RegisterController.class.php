@@ -29,7 +29,7 @@ class RegisterController extends Controller
         $login = Factory::M('Register');
         $result = $login->attestation();
         if ($result){
-            $this->success('註冊成功','');
+            $this->success('註冊成功','?m=Admin&c=Login&a=login');
         }
 
     }
