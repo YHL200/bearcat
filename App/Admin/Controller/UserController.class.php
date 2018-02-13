@@ -20,6 +20,7 @@ class UserController extends Controller
 
 
 
+
         $rescontent=$login->sel_data();
 
 
@@ -33,7 +34,7 @@ class UserController extends Controller
 
     }
 
-    /**顶顶顶顶
+    /**
      * 提交留言数据
      */
     public function adddata(){
