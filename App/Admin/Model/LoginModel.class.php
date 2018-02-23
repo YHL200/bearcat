@@ -7,6 +7,7 @@ class LoginModel extends Model{
         $adminname = $_POST['user'];
         $pwd = md5($_POST['pwd']);
 
+
         $sql = "select * from login where username=?";
 
         $res = $this->find($sql, array($adminname));

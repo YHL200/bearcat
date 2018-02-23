@@ -1,6 +1,6 @@
 <?php
 
-class IndexController extends CommonController
+class IndexController extends Controller
 {
     /***
      * 显示首页的模板
@@ -15,6 +15,39 @@ class IndexController extends CommonController
 
           $this->assign('res',$res);
          $this->display('_index.html');
+
+      }
+
+    /**
+     * 这是admin超级管理员查询数据的方法
+     */
+
+      public function super(){
+
+          $result=Factory::M('Index');
+
+          $addresserid=$result->sel_super_addresserid();
+          $recipientsid=$result->sel_super_recipientsid();
+
+
+                  /*echo "<pre>";
+           print_r($sel_super);
+           exit;*/
+          $this->assign('addresserid',$addresserid);
+          $this->assign('recipientsid',$recipientsid);
+
+
+          $this->display('_superindex.html');
+
+
+
+
+
+      }
+
+      public  function delete(){
+          $result=Factory::M('Index');
+          $res=$result->del();
 
       }
 

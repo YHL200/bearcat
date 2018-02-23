@@ -8,5 +8,6 @@ class CommonController extends Controller {
             $this->success('请先登录', '?m=Admin&c=Login&a=login');
         }
     }
+
 }
 ?>

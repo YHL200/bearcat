@@ -17,4 +17,38 @@ class IndexModel extends Model {
 
     }
 
+    public function sel_super_addresserid(){
+
+        $sql="SELECT addresserid  FROM MESSAGE  ";
+        $res=$this->selectsql($sql);
+
+
+        return $res;
+     /*   echo "<pre>";
+        print_r($res);
+        exit;*/
+
+
+    }
+    public function sel_super_recipientsid(){
+        $sql="SELECT recipientsid,title,content  FROM MESSAGE ";
+        $res=$this->selectsql($sql);
+        return $res;
+    }
+    public  function   del(){
+        $id=$_GET['d'];
+        $sql="delete form message where id=$id";
+        $res=$this->selectsql($sql);
+           echo "<pre>";
+     var_dump($res);
+     exit;
+
+        return $res;
+    }
+
+
+
+
+
+
 }
